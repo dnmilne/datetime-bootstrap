@@ -1,0 +1,21 @@
+.minimal-hljs pre{
+
+	border: none ; 
+	margin: 0px ;
+}
+
+.minimal-hljs code {
+	background:transparent;
+}
+
+.param-table {
+}
+
+.param-table td {
+	vertical-align: top ;
+	padding: 5px ;
+}
+
+.clickable {
+	cursor: pointer ;
+}

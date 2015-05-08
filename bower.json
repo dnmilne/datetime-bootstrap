@@ -1,0 +1,27 @@
+{
+  "name": "datetime-bootstrap-demo",
+  "version": "0.0.1",
+  "dependencies": {
+  	"datetime-bootstrap": "0.0.1",
+    "angular-highlightjs": "latest"
+  },
+  "authors": [
+    "David Milne <david.milne@sydney.edu.au>"
+  ],
+  "description": "Angular widgets for entering dates and times, with boostrap theming",
+  "keywords": [
+    "angular",
+    "date",
+    "time",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dnmilne/datetime-bootstrap",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

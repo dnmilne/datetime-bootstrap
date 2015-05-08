@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta charset="utf-8">
+
+<html lang="en" ng-app='app' xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	  <title>angular-datetime</title>
+
+	  <script type="text/javascript"  src="bower_components/angular/angular.min.js"></script>
+	  <script type="text/javascript"  src="bower_components/lodash/lodash.min.js"></script>
+	  <script type="text/javascript"  src="bower_components/moment/moment.js"></script>
+	  <script type="text/javascript"  src="bower_components/datetime-bootstrap/dist/datetime-bootstrap.js"></script>
+
+	    <link href="bower_components/highlightjs/styles/github.css" rel="stylesheet">
+  		<script type="text/javascript" src="bower_components/highlightjs/highlight.pack.js"></script>
+  		<script type="text/javascript" src="bower_components/angular-highlightjs/angular-highlightjs.min.js"></script>
+
+
+	  <script type="text/javascript"  src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+	  <script type="text/javascript"  src="app.js"></script>
+
+	  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="bower_components/datetime-bootstrap/dist/datetime-bootstrap.css" rel="stylesheet">
+	  <link href="style.css" rel="stylesheet">
+
+	</head>
+	<body ng-controller='Ctrl'>
+
+
+		<div class='container'>
+
+			<div class='col-sm-2'>
+			</div>
+
+      		<div class='col-sm-8'>
+
+        	<h1>datetime-bootstrap</h1>
+
+	        <p class='lead'>
+	        	Lightweight widgets for entering dates and times, themed with bootstrap
+	        </p>
+
+	        <p>
+	          	<strong>datetime-bootstrap</strong> is an AngularJS module that provides simple widgets for entering dates and times, with <a target='_blank' href='http://getbootstrap.com'>bootstrap</a> theming. 
+	 
+	          	Check out the <a href='https://github.com/dnmilne/datetime-bootstrap'>GitHub repository</a> for source code and installation instructions.
+	        </p>
+
+	        <hr/>
+
+	        <h2>Dates</h2>
+
+	        <p>
+	        	The <strong>date-input</strong> directive provides a simple widget for entering dates, where the user can either type the date directly, or select it from dropdowns.  
+	        </p>
+
+	        <div class="panel panel-default">
+				<div class="panel-body">
+		        	<div class='form-inline'>
+						<div class='form-group'>
+							<date-input date='values.date' config='configs.date'></date-input>
+						</div>
+					</div>
+			  	</div>
+
+<div hljs language='xhtml' class='panel-footer minimal-hljs'>
+<date-input date='date' config='config'/>
+</div>
+			</div>
+
+			<h4 ng-click='showDateAttributes = !showDateAttributes' class='clickable'>
+				<span ng-hide='showDateAttributes' class='glyphicon glyphicon-plus-sign'></span>
+				<span ng-show='showDateAttributes' class='glyphicon glyphicon-minus-sign'></span>
+				Attributes
+			</h4>
+
+			<table ng-show='showDateAttributes' class='param-table'>
+						
+				<tr>
+					<td class='text-right'><strong>date</strong></td>
+					<td>
+						<p>
+							An array of year, month and day. It will always contain a legal date, or an array of null values if the currently entered date is invalid.
+						</p>
+						<p>
+							Two-way binding is implemented so changes to the widget are immediately reflected in the array, and vice-versa.
+						</p>
+
+						<p class='small'>
+							
+							<span class='text-muted'>currently</span> 
+
+							<code>
+								<span ng-show='values.date'>{{values.date}}</span>
+								<span ng-hide='values.date'>undefined</span>
+							</code>
+
+							&nbsp;
+
+							<a ng-show='values.date' class='btn btn-default btn-xs' ng-click='values.date = undefined'>clear</a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class='text-right'><strong>config</strong></td>
+					<td>
+						<p>
+							A JSON object that configures the widget, described below. This only needs to be specified if you would like to deviate from the default configuration.
+						</p>
+					</td>
+				</tr>
+			</table>
+
+			<h4 ng-click='showDateConfig = !showDateConfig' class='clickable'>
+				<span ng-hide='showDateConfig' class='glyphicon glyphicon-plus-sign'></span>
+				<span ng-show='showDateConfig' class='glyphicon glyphicon-minus-sign'></span>
+				Configuration
+			</h4>
+
+			<p ng-show='showDateConfig'>
+				The <strong>config</strong> object can optionally specify any of the following properties:
+			</p> 
+
+			<table ng-show='showDateConfig' class='param-table'>
+				<tr>
+					<td class='text-right'><strong>within</strong></td>
+					<td>
+						<p>
+							 A string specifying the range of expected dates, so appropriate dropdowns can be provided.
+						</p>
+
+						<p>
+							For example, <a ng-click='configs.date.within="2 weeks"'>2 weeks</a> will provide a single dropdown listing the next 14 days, while <a ng-click='configs.date.within="2 weeks ago"'>2 weeks ago</a> will provide a listing of the previous 14 days. 
+						</p>
+						<p>
+							Large values will result individual dropdowns for day, month and year. So, a good value for entering birthdates would be <a ng-click='configs.date.within="140 years ago"'>140 years ago</a>.
+						</p>
+						<p>
+							Defaults to <a ng-click='configs.date.within=undefined'>undefined</a>, which results in individual dropdowns for day and month, and no dropdown for year
+						</p>
+						
+						<p class='small'>
+							
+							<span class='text-muted'>currently</span> 
+
+							<code>
+								<span ng-show='configs.date.within'>{{configs.date.within}}</span>
+								<span ng-hide='configs.date.within'>undefined</span>
+							</code>
+
+							&nbsp;
+
+							<a ng-show='configs.date.within' class='btn btn-default btn-xs' ng-click='configs.date.within = undefined'>clear</a>
+						</p>
+					</td>
+				</tr>
+			</table>
+
+
+			<hr/>
+			
+	        <h2>Times</h2>
+
+	        <p>
+	        	The <strong>time-input</strong> directive provides a simple widget for entering times, where the user can either type the time directly, or select it from dropdowns.  
+	        </p>
+
+	        <div class="panel panel-default">
+				<div class="panel-body">
+		        	<div class='form-inline'>
+						<div class='form-group'>
+							<time-input time='values.time' config='configs.time'></date-input>
+						</div>
+					</div>
+			  	</div>
+
+<div hljs language='xhtml' class='panel-footer minimal-hljs'>
+<time-input time='time' config='config'/>
+</div>
+			</div>
+		
+			<h4 ng-click='showTimeAttributes = !showTimeAttributes' class='clickable'>
+				<span ng-hide='showTimeAttributes' class='glyphicon glyphicon-plus-sign'></span>
+				<span ng-show='showTimeAttributes' class='glyphicon glyphicon-minus-sign'></span>
+				Attributes
+			</h4>
+
+			<table ng-show='showTimeAttributes' class='param-table'>
+						
+				<tr>
+					<td class='text-right'><strong>time</strong></td>
+					<td>
+						<p>
+							An array of hour, minute and second. It will always contain a legal time (in 24 hour format), or an array of null values if the currently entered time is invalid.
+						</p>
+						<p>
+							Two-way binding is implemented so changes to the widget are immediately reflected in the array, and vice-versa.
+						</p>
+
+						<p class='small'>
+							
+							<span class='text-muted'>currently</span> 
+
+							<code>
+								<span ng-show='values.time'>{{values.time}}</span>
+								<span ng-hide='values.time'>undefined</span>
+							</code>
+
+							&nbsp;
+
+							<a ng-show='values.time' class='btn btn-default btn-xs' ng-click='values.time = undefined'>clear</a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class='text-right'><strong>config</strong></td>
+					<td>
+						<p>
+							A JSON object that configures the widget, described below. This only needs to be specified if you would like to deviate from the default configuration.
+						</p>
+					</td>
+				</tr>
+			</table>
+
+			<h4 ng-click='showTimeConfig = !showTimeConfig' class='clickable'>
+				<span ng-hide='showTimeConfig' class='glyphicon glyphicon-plus-sign'></span>
+				<span ng-show='showTimeConfig' class='glyphicon glyphicon-minus-sign'></span>
+				Configuration
+			</h4>
+
+			<p ng-show='showTimeConfig'>
+				The <strong>config</strong> object can optionally specify any of the following properties:
+			</p> 
+
+			<table ng-show='showTimeConfig' class='param-table'>
+				<tr>
+					<td class='text-right'><strong>showMinutes</strong></td>
+					<td>
+						<p>
+							 <code>true</code> if it should be possible to set minutes, otherwise <code>false</code>. Defaults to <code>true</code>.
+						</p>
+
+						<p class='small'>
+							<span class='text-muted'>currently</span>
+							&nbsp;
+							<label><input type="radio" ng-model="configs.time.showMinutes" ng-value='true'>&nbsp;true</label>
+							&nbsp;
+							<label><input type="radio" ng-model="configs.time.showMinutes" ng-value='false'>&nbsp;false</label>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class='text-right'><strong>minuteAccuracy</strong></td>
+					<td>
+						<p>
+							 The accuracy with which minutes should be presented in the dropdown. Defaults to <code>15</code>, meaning that multiples of 15 are shown. Valid values are <a ng-click='configs.time.minuteAccuracy=5'>5</a>, <a ng-click='configs.time.minuteAccuracy=10'>10</a> and
+							 <a ng-click='configs.time.minuteAccuracy=15'>15</a>.
+						</p>
+
+						<p class='small'>
+							
+							<span class='text-muted'>currently</span> 
+
+							<code>
+								<span ng-show='configs.time.minuteAccuracy'>{{configs.time.minuteAccuracy}}</span>
+								<span ng-hide='configs.time.minuteAccuracy'>undefined</span>
+							</code>
+
+							&nbsp;
+
+							<a ng-show='configs.time.minuteAccuracy' class='btn btn-default btn-xs' ng-click='configs.time.minuteAccuracy = undefined'>clear</a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class='text-right'><strong>showSeconds</strong></td>
+					<td>
+						<p>
+							 <code>true</code> if it should be possible to set seconds, otherwise <code>false</code>. Defaults to <code>false</code>.
+						</p>
+
+						<p class='small'>
+							<span class='text-muted'>currently</span>
+							&nbsp;
+							<label><input type="radio" ng-model="configs.time.showSeconds" ng-value='true'>&nbsp;true</label>
+							&nbsp;
+							<label><input type="radio" ng-model="configs.time.showSeconds" ng-value='false'>&nbsp;false</label>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class='text-right'><strong>secondAccuracy</strong></td>
+					<td>
+						<p>
+							 The accuracy with which seconds should be presented in the dropdown. Defaults to <code>15</code>, meaning that multiples of 15 are shown. Valid values are <a ng-click='configs.time.secondAccuracy=5'>5</a>, <a ng-click='configs.time.secondAccuracy=10'>10</a> and
+							 <a ng-click='configs.time.secondAccuracy=15'>15</a>.
+						</p>
+
+						<p class='small'>
+							
+							<span class='text-muted'>currently</span> 
+
+							<code>
+								<span ng-show='configs.time.secondAccuracy'>{{configs.time.secondAccuracy}}</span>
+								<span ng-hide='configs.time.secondAccuracy'>undefined</span>
+							</code>
+
+							&nbsp;
+
+							<a ng-show='configs.time.secondAccuracy' class='btn btn-default btn-xs' ng-click='configs.time.secondAccuracy = undefined'>clear</a>
+						</p>
+					</td>
+				</tr>
+			</table>
+
+
+
+	</body>
+</html>
