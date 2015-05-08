@@ -1,0 +1,54 @@
+<div class='form-control'>
+
+	<div dropdown class='dropdown' is-open='focii.hour' style='display: inline-block' auto-close='disabled'>
+		<input class='internal-form-control' type='text' ng-model='units.hour' placeholder='hh' force-digits='2' clear-zero in-focus='focii.hour' style='width:2em ; text-align:center'/>
+
+		<ul class="dropdown-menu" role='menu' style='max-height: 300px; overflow-y: auto;'>
+			<li ng-repeat='h in data.hours'>
+				<a role="menuitem" ng-click='units.hour = h.value'>{{h.label}}</a>
+			</li>
+		</ul>
+	</div>
+
+	<div ng-if='cfg.showMinutes' style="display:inline-block" >
+		&nbsp;:&nbsp;
+
+		<div dropdown class='dropdown' is-open='focii.minute' auto-close='disabled' style='display: inline-block'>
+			<input class='internal-form-control' type='text' ng-model='units.minute' placeholder='mm' force-digits='2' in-focus='focii.minute' style='width:2em ; text-align:center'/>
+
+			<ul class="dropdown-menu" role='menu' style='max-height: 300px; overflow-y: auto;'>
+				<li ng-repeat='m in data.minutes'>
+					<a role="menuitem" ng-click='units.minute = m.value'>{{m.label}}</a>
+				</li>
+			</ul>
+		</div>	
+	</div>
+
+	<div ng-if='cfg.showMinutes && cfg.showSeconds' style="display:inline-block" >
+		&nbsp;:&nbsp;
+
+		<div dropdown class='dropdown' is-open='focii.second' auto-close='disabled' style='display: inline-block'>
+			<input class='internal-form-control' type='text' ng-model='units.second' placeholder='ss' force-digits='2' in-focus='focii.second' style='width:2em ; text-align:center'/>
+
+			<ul class="dropdown-menu" role='menu' style='max-height: 300px; overflow-y: auto;'>
+				<li ng-repeat='s in data.seconds'>
+					<a role="menuitem" ng-click='units.second = s.value'>{{s.label}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	&nbsp;&nbsp;
+
+	<div dropdown class='dropdown' is-open='focii.period' auto-close='disabled' style='display: inline-block'>
+
+		<input class='internal-form-control' type='text' ng-model='units.period' force-period in-focus='focii.period' style='width:2em ; text-align:center'/>
+
+		<ul class="dropdown-menu" role='menu' style='max-height: 300px; overflow-y: auto;'>
+			<li ng-repeat='p in data.periods'>
+				<a role="menuitem" ng-click='units.period = p.value'>{{p.label}}</a>
+			</li>
+		</ul>
+	</div>
+</div>

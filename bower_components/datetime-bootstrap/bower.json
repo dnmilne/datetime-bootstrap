@@ -1,0 +1,35 @@
+{
+  "name": "datetime-bootstrap",
+  "version": "0.0.1",
+  "dependencies": {
+  	"angular": "latest",
+  	"lodash": "latest",
+    "moment": "latest",
+    "bootstrap": "latest",
+    "angular-bootstrap": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": "latest",
+    "angular-resource": "latest"
+  },
+  "main": ["dist/datetime-bootstrap.js", "datetime/datetime-bootstrap.css"],
+  "authors": [
+    "David Milne <david.milne@sydney.edu.au>"
+  ],
+  "description": "Angular widgets for entering dates and times, with boostrap theming",
+  "keywords": [
+    "angular",
+    "date",
+    "time",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dnmilne/datetime-bootstrap",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,47 @@
+
+	<div dropdown class='dropdown' is-open='drops.date' style='display: inline-block' auto-close='disabled'>
+		<div class='form-control'>
+
+			<div dropdown class='dropdown' is-open='drops.day' style='display: inline-block' auto-close='disabled'>
+				<input class='internal-form-control' type='text' ng-model='units.day' placeholder='dd' force-digits='2' clear-zero in-focus='focii.day' style='width:2em ; text-align:center'/>
+
+				<ul class="dropdown-menu" role='menu' style='max-height: 300px; overflow-y: auto;'>
+					<li ng-repeat='d in data.days'>
+						<a role="menuitem" ng-click='units.day = d.value' >{{d.label}}</a>
+					</li>
+				</ul>
+			</div>
+
+			&nbsp;/&nbsp;
+
+			<div dropdown class='dropdown' is-open='drops.month' auto-close='disabled' style='display: inline-block'>
+				<input class='internal-form-control' type='text' ng-model='units.month' placeholder='mm' force-digits='2' clear-zero in-focus='focii.month' style='width:2em ; text-align:center'/>
+
+				<ul class="dropdown-menu" role='menu' style='max-height: 300px; overflow-y: auto;'>
+					<li ng-repeat='m in data.months'>
+						<a role="menuitem" ng-click='units.month = m.value' stop-propagation>{{m.label}}</a>
+					</li>
+				</ul>
+			</div>
+
+			&nbsp;/&nbsp;
+
+			<div dropdown class='dropdown' is-open='drops.year' auto-close='disabled' style='display: inline-block'>
+
+				<input class='internal-form-control' type='text' ng-model='units.year' placeholder='yyyy' force-digits='4' clear-zero in-focus='focii.year' style='width:4em ; text-align:center'/>
+
+				<ul class="dropdown-menu" role='menu' style='max-height: 300px; overflow-y: auto;'>
+					<li ng-repeat='y in data.years'>
+						<a role="menuitem" ng-click='units.year = y.value'>{{y.label}}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<ul class="dropdown-menu" role="menu">
+  			<li ng-repeat='date in data.dates'>
+  				<a role="menuitem" tabindex="-1" ng-click='setDate(date.value)'>{{date.label}}</a>
+  			</li>
+ 		</ul>
+
+	</div>

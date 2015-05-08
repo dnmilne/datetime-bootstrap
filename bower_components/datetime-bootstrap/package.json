@@ -1,0 +1,48 @@
+{
+  "name": "datetime-bootstrap",
+  "version": "0.1.0",
+  "description": "Angular widgets for entering dates and times, with boostrap theming",
+  "main": [
+    "dist/datetime-bootstrap.js",
+    "dist/datetime-bootstrap.css"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dnmilne/datetime-bootstrap.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "ask"
+  ],
+  "author": "David Milne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnmilne/datetime-bootstrap/issues"
+  },
+  "homepage": "https://github.com/dnmilne/datetime-bootstrap",
+  "devDependencies": {
+    "connect-livereload": "^0.5.3",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-html-angular-validate": "^0.4.1",
+    "grunt-html2js": "^0.3.1",
+    "grunt-open": "^0.2.3",
+    "load-grunt-tasks": "^3.1.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "latest",
+    "karma-jasmine": "latest",
+    "karma-jasmine-jquery": "latest",
+    "matchdep": "^0.3.0"
+  }
+}
