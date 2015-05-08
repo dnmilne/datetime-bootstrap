@@ -23,3 +23,5 @@ target/
 #Bower
 bower_components/
 
+#Node
+node_modules/
