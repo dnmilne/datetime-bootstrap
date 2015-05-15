@@ -1,8 +1,8 @@
 
-	<div dropdown class='dropdown' is-open='drops.date' style='display: inline-block' auto-close='disabled'>
+	<div dropdown class='dropdown' is-open='drops.date' style='display: inline-block' auto-close='disabled' dropdown-append-to-body>
 		<div class='form-control'>
 
-			<div dropdown class='dropdown' is-open='drops.day' style='display: inline-block' auto-close='disabled'>
+			<div dropdown class='dropdown' is-open='drops.day' style='display: inline-block' auto-close='disabled' dropdown-append-to-body>
 				<input class='internal-form-control' type='text' ng-model='units.day' placeholder='dd' force-digits='2' clear-zero in-focus='focii.day' style='width:2em ; text-align:center'/>
 
 				<ul class="dropdown-menu" role='menu' style='max-height: 300px; overflow-y: auto;'>
@@ -14,7 +14,7 @@
 
 			&nbsp;/&nbsp;
 
-			<div dropdown class='dropdown' is-open='drops.month' auto-close='disabled' style='display: inline-block'>
+			<div dropdown class='dropdown' is-open='drops.month' auto-close='disabled' style='display: inline-block' dropdown-append-to-body >
 				<input class='internal-form-control' type='text' ng-model='units.month' placeholder='mm' force-digits='2' clear-zero in-focus='focii.month' style='width:2em ; text-align:center'/>
 
 				<ul class="dropdown-menu" role='menu' style='max-height: 300px; overflow-y: auto;'>
@@ -26,7 +26,7 @@
 
 			&nbsp;/&nbsp;
 
-			<div dropdown class='dropdown' is-open='drops.year' auto-close='disabled' style='display: inline-block'>
+			<div dropdown class='dropdown' is-open='drops.year' auto-close='disabled' style='display: inline-block' dropdown-append-to-body>
 
 				<input class='internal-form-control' type='text' ng-model='units.year' placeholder='yyyy' force-digits='4' clear-zero in-focus='focii.year' style='width:4em ; text-align:center'/>
 
